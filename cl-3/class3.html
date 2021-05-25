@@ -1,0 +1,42 @@
+<!--one way data binding-->
+
+<html>
+<head>
+    <title>One way data binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .blue{
+            text-decoration: dashed;
+            color:blue;
+        }
+        .white{
+            background-color: aqua;
+            width:250px;
+        }
+    </style>
+</head>
+<body>
+
+<!--all code-->
+<div id="app">
+<!--    <h1>Hello {{name}}</h1>-->
+<!--    <h2>The sentence is {{ Myage(20) }}</h2>-->
+
+    <a :href="address">Facebook</a>
+    <div :class="className">
+        My name is Sk Md Abuzar Gifari
+    </div>
+
+</div>
+
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            address:"https://www.facebook.com",
+            className:['blue','white']
+        }
+    })
+</script>
+</body>
+</html>

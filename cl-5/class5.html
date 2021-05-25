@@ -1,0 +1,49 @@
+<!--one way data binding-->
+
+<html>
+<head>
+    <title>Vue Js Events</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .canvas{
+            height:200px;
+            width:200px;
+            margin-top: 20px;
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+<!--all code-->
+<div id="app">
+    <button @click="Me">Click Me</button>
+    <div class="canvas" @mousemove="move">
+        {{ log.x }},{{ log.y }}
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            log:{
+                x:0,
+                y:0
+            }
+        },
+        methods:{
+            Me(event){
+                //blank
+            },
+            move(event){
+                //alert(e);
+                this.log.x = event.offsetX
+                this.log.y = event.offsetY
+            }
+        }
+    })
+</script>
+</body>
+</html>
